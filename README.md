@@ -23,7 +23,6 @@ Before diving into the code, let's set up the environment:
    - `INFURA_URL` - Your Infura URL, which looks like `https://sepolia.infura.io/v3/YOUR-API-KEY`.
    - `PRIVATE_KEY` - The private key of your MetaMask account.
    - `ETHERSCAN_API` - The API key from etherscan.io.
-   - `OWNER` - Your wallet address, for example, `0xd3106F16102e2AEF6AC5D3E371c121885aa4f82e`.
 
 ### Compilation
 
