@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Project Setup Guide
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the project! This guide will walk you through the steps to get the project running on your machine.
 
-## Available Scripts
+## How to Install and Run the Project
 
-In the project directory, you can run:
+Before diving into the code, let's set up the environment:
 
-### `npm start`
+### Prerequisites
+- Node.js installed on your machine.
+- Access to a terminal or command-line interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Install all the necessary dependencies by running the following command:
+   ```zsh
+   npm install
+   ```
+4. Create a `.env` file in the root of the project and paste the following lines with your respective values:
+   - `NETWORK` - The blockchain network you are using.
+   - `INFURA_URL` - Your Infura URL, which looks like `https://sepolia.infura.io/v3/YOUR-API-KEY`.
+   - `PRIVATE_KEY` - The private key of your MetaMask account.
+   - `ETHERSCAN_API` - The API key from etherscan.io.
+   - `OWNER` - Your wallet address, for example, `0xd3106F16102e2AEF6AC5D3E371c121885aa4f82e`.
 
-### `npm test`
+### Compilation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To compile the smart contract, use the command:
+```zsh
+make compile
+```
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Deploy your contract to the network with:
+```zsh
+make deploy
+```
 
-### `npm run build` fails to minify
+### Verification
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Verify the contract by providing the contract's address as follows:
+```zsh
+make address=*your_contract_address* verify
+```
+
+### Running the Server
+
+To run a local development server:
+```zsh
+make run
+```
+
+### Testing
+
+Execute tests using:
+```zsh
+make ctest
+```
+
+## React Application
+
+This project includes a frontend built with Create React App.
+
+### Development Server
+
+To start the app in development mode, run:
+```zsh
+npm start
+```
+Your default web browser will open [http://localhost:3000](http://localhost:3000) automatically.
+
+### Running Tests
+
+Interactive tests can be conducted with:
+```zsh
+npm test
+```
+
+### Building for Production
+
+To create a production build, use:
+```zsh
+npm run build
+```
+This compiles the app and optimizes the build for performance.
+
+### Customization
+
+If you need to eject from the Create React App defaults (not recommended), you can do so using:
+```zsh
+npm run eject
+```
+**Warning:** This action is irreversible.
+
+## Additional Information
+
+For more details, refer to the Create React App documentation and learn about React through the official React documentation.
+
+By following these steps, you should have a fully functional local development environment for both the smart contract and the React application. Happy coding!
